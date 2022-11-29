@@ -1,0 +1,19 @@
+{
+  "name": "funge-token",
+  "version": "1.0.0",
+  "description": "DApp Development Funge token",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remix-project/remixd": "^0.6.8",
+    "dotenv": "^16.0.3",
+    "g": "^2.0.1"
+  }
+}
