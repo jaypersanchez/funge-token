@@ -1,71 +1,111 @@
 // SPDX-License-Identifier: MIT
 // Tells the Solidity compiler to compile only from v0.8.13 to v0.9.0
-pragma solidity ^0.8.13;
+pragma solidity ^0.4.18;
 
 contract B2BArticles {
   
-  // events
-  event LogSellArticle(
-    address indexed _seller,
-    string _name,
-    uint256 _price
-  );
-  event LogBuyArticle(
-    address indexed _buyer,
-    string _name,
-    uint256 _price
-  );
-
-  // state variables
+  // custom types
   struct Article {
+    uint id;
     address seller;
+    address buyer;
     string name;
     string description;
     uint256 price;
   }
 
-  uint numberOfArticleCount = 0;
-  mapping(uint => Article) public articlesForSale;
+  // state variables
+  mapping (uint => Article) public articles;
+  uint articleCounter;
+
+  // events
+  event LogSellArticle(
+    uint indexed _id,
+    address indexed _seller,
+    string _name,
+    uint256 _price
+  );
+  event LogBuyArticle(
+    uint indexed _id,
+    address indexed _seller,
+    address indexed _buyer,
+    string _name,
+    uint256 _price
+  );
 
   // sell an article
-  function sellArticle(string memory _name, string memory _description, uint256 _price) public {
-    articlesForSale[numberOfArticleCount] = Article(msg.sender, _name, _description, _price);
-    numberOfArticleCount++;
+  function sellArticle(string _name, string _description, uint256 _price) public {
+    // a new article
+    articleCounter++;
 
-    emit LogSellArticle(msg.sender, _name, _price);
+    // store this article
+    articles[articleCounter] = Article(
+      articleCounter,
+      msg.sender,
+      0x0,
+      _name,
+      _description,
+      _price
+    );
+
+    emit LogSellArticle(articleCounter, msg.sender, _name, _price);
   }
 
-  // get an article
-  function getArticle() public view returns (Article[] memory articles) {
-      Article[] result = new Article[];
-      for(uint counter=0; counter<numberOfArticleCount; counter++) {
-        result[counter] = articlesForSale[counter];
-        counter++;
+  // fetch the number of articles in the contract
+  function getNumberOfArticles() public view returns (uint) {
+    return articleCounter;
+  }
+
+  // fetch and return all article IDs for articles still for sale
+  function getArticlesForSale() public view returns (uint[]) {
+    // prepare output array
+    uint[] memory articleIds = new uint[](articleCounter);
+
+    uint numberOfArticlesForSale = 0;
+    // iterate over articles
+    for(uint i = 1; i <= articleCounter;  i++) {
+      // keep the ID if the article is still for sale
+      if(articles[i].buyer == 0x0) {
+        articleIds[numberOfArticlesForSale] = articles[i].id;
+        numberOfArticlesForSale++;
       }
-      return result;
+    }
+
+    // copy the articleIds array into a smaller forSale array
+    uint[] memory forSale = new uint[](numberOfArticlesForSale);
+    for(uint j = 0; j < numberOfArticlesForSale; j++) {
+      forSale[j] = articleIds[j];
+    }
+    return forSale;
   }
 
   // buy an article
-  function buyArticle() payable public {
+  function buyArticle(uint _id) payable public {
     // we check whether there is an article for sale
-    //require(seller != address(0));
+    //require(articleCounter > 0);
+
+    // we check that the article exists
+    //require(_id > 0 && _id <= articleCounter);
+
+    // we retrieve the article
+    Article storage article = articles[_id];
 
     // we check that the article has not been sold yet
-    //require(buyer == address(0));
+    //require(article.buyer == 0X0);
 
     // we don't allow the seller to buy his own article
-    //require(msg.sender != seller);
+    //require(msg.sender != article.seller);
 
     // we check that the value sent corresponds to the price of the article
-    //require(msg.value == price);
+    //require(msg.value == article.price);
 
     // keep buyer's information
-    //buyer = msg.sender;
+    article.buyer = msg.sender;
 
     // the buyer can pay the seller
-    //payable(seller).transfer(msg.value);
+    article.seller.transfer(msg.value);
 
     // trigger the event
-    //emit LogBuyArticle(msg.sender, name, price);
+    emit LogBuyArticle(_id, article.seller, article.buyer, article.name, article.price);
   }
 }
