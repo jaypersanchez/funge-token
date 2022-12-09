@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.26+commit.4563c3fc"
+		"version": "0.4.18+commit.9cf6e910"
 	},
 	"language": "Solidity",
 	"output": {
@@ -179,7 +179,6 @@
 		"compilationTarget": {
 			"contracts/B2BArticles.sol": "B2BArticles"
 		},
-		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -189,9 +188,9 @@
 	},
 	"sources": {
 		"contracts/B2BArticles.sol": {
-			"keccak256": "0xddde84b261fee603fb3f2d261f833fecb27f60dff6ab8cf10f5bcce4f9c35ee1",
+			"keccak256": "0x7bae8e456caaf4015cc65b7fa87755087928b4a6cd9b2821ab39385dea3e534c",
 			"urls": [
-				"bzzr://ef2dc395d3c1b606638703188c59c5ca5c254214ba86eac2186c5b257af12928"
+				"bzzr://29aef7149f5d622cec0a65947dbbd2b67c10d90fa249cba8e87f30669b337acd"
 			]
 		}
 	},

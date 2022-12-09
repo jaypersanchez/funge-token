@@ -1,0 +1,260 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sellerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "offerAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "currentDate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expiredDate",
+						"type": "uint256"
+					}
+				],
+				"name": "OfferCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_listOfOfferContracts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "buyerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sellerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offerDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiredDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offerAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "accepted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_value",
+						"type": "bool"
+					}
+				],
+				"name": "accept",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_buyerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sellerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_offerDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_currentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiredDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_offerAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_accepted",
+						"type": "bool"
+					}
+				],
+				"name": "createOfferContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getOfferContractDetailsById",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Comfree.sol": "ComfreeProtocol"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Comfree.sol": {
+			"keccak256": "0x87ce0573eab31dfb25b0e4419deb9826f867a296f19c0466003ca65da1f85406",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc7ea98541fadce7e96b1ec76bd06b2666e2d3f35a96200e08ba54068049369a",
+				"dweb:/ipfs/QmP3JDGSdgJLgiQ6bNBwbGxQJnDM8ELRAKJPfGWNaTMkRK"
+			]
+		}
+	},
+	"version": 1
+}

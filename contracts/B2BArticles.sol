@@ -48,7 +48,7 @@ contract B2BArticles {
       _price
     );
 
-    emit LogSellArticle(articleCounter, msg.sender, _name, _price);
+    LogSellArticle(articleCounter, msg.sender, _name, _price);
   }
 
   // fetch the number of articles in the contract
@@ -79,6 +79,8 @@ contract B2BArticles {
     return forSale;
   }
 
+  
+
   // buy an article
   function buyArticle(uint _id) payable public {
     // we check whether there is an article for sale
@@ -97,7 +99,7 @@ contract B2BArticles {
     //require(msg.sender != article.seller);
 
     // we check that the value sent corresponds to the price of the article
-    //require(msg.value == article.price);
+    require(msg.value == article.price);
 
     // keep buyer's information
     article.buyer = msg.sender;
@@ -106,6 +108,6 @@ contract B2BArticles {
     article.seller.transfer(msg.value);
 
     // trigger the event
-    emit LogBuyArticle(_id, article.seller, article.buyer, article.name, article.price);
+    LogBuyArticle(_id, article.seller, article.buyer, article.name, article.price);
   }
 }
