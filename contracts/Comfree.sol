@@ -21,28 +21,49 @@ contract ComfreeProtocol {
         uint currentDate;
         uint offerAmount;
         bool accepted;
+        uint conditionListId;
     }
 
-    struct Condition {
-        uint dateOfCondition;
-        uint conditionExpiryDate;
-        bool conditionMet;
-    }
-
-    struct ConditionsList {
+    struct conditionList {
         /*
         * For simplicity sake there will only be a few conditions
         * when a condition is set to true, then it is a condition 
         * that needs to be met
         */
+        //uint conditionListId;
+        bool conditionMet;
         bool WallsPainted;
         bool CarpetCleaned;
         bool WindowsWashed;
     }
 
     mapping (uint => offerContract) public _listOfOfferContracts;
+    mapping (uint => conditionList) public _conditionList;
+    uint conditionListCounter;
     uint offerContractCounter; //this is used as an index that holds each contracts
     event OfferCreated(uint256 id, address indexed buyerAddress, address indexed sellerAddress, uint offerAmount, uint currentDate, uint expiredDate);
+    event ConditionListCreate(uint _offerContractId, bool _conditionMet);
+
+    function manageConditions(uint _offerId, bool _wallsPainted, bool _CarpetCleaned, bool _WindowsWashed) public {
+        _conditionList[_offerId].WallsPainted = _wallsPainted;
+        _conditionList[_offerId].CarpetCleaned = _CarpetCleaned;
+        _conditionList[_offerId].WindowsWashed = _WindowsWashed;
+        //if all conditions are true, then set conditions met to true automatically.
+        if( _conditionList[_offerId].WallsPainted == true && _conditionList[_offerId].CarpetCleaned == true && _conditionList[_offerId].WindowsWashed == true) {
+            _conditionList[_offerId].conditionMet = true;
+        }
+    }
+
+    function createConditionList(uint _offerId) public {
+        bool isAccepted = _listOfOfferContracts[_offerId].accepted;
+        require(isAccepted == true);
+        _conditionList[_offerId].conditionMet = false;
+        _conditionList[_offerId].WallsPainted = false;
+        _conditionList[_offerId].CarpetCleaned = false;
+        _conditionList[_offerId].WindowsWashed = false; 
+        emit ConditionListCreate(_offerId, _conditionList[_offerId].conditionMet);
+    }
+        
 
     function createOfferContract(address _buyerAddress, address _sellerAddress, 
                                  uint _offerDate, uint _currentDate, uint _expiredDate,
@@ -70,11 +91,10 @@ contract ComfreeProtocol {
         */
         require(_listOfOfferContracts[_id].sellerAddress != msg.sender);
         _listOfOfferContracts[_id].accepted = _value;
-        //emit OfferAccepted(_id, _value);
         return _value; //this will either return true or false
     }
 
-    function getOfferContractDetailsById(uint _id) public view returns(uint[] memory) {
+    function getOfferContractDetailsById() public view returns(uint[] memory) {
         uint[] memory offerIds = new uint[](offerContractCounter);
 
         uint numberOfPropertiesForSale = 0;

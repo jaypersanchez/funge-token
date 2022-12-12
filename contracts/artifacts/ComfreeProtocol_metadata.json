@@ -16,6 +16,25 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
+						"name": "_offerContractId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_conditionMet",
+						"type": "bool"
+					}
+				],
+				"name": "ConditionListCreate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -52,6 +71,40 @@
 				],
 				"name": "OfferCreated",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_conditionList",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "conditionMet",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "WallsPainted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "CarpetCleaned",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "WindowsWashed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -102,6 +155,11 @@
 						"internalType": "bool",
 						"name": "accepted",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "conditionListId",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -128,6 +186,19 @@
 						"type": "bool"
 					}
 				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "createConditionList",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -175,13 +246,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"name": "getOfferContractDetailsById",
 				"outputs": [
 					{
@@ -191,6 +256,34 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_wallsPainted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_CarpetCleaned",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_WindowsWashed",
+						"type": "bool"
+					}
+				],
+				"name": "manageConditions",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -248,11 +341,11 @@
 	},
 	"sources": {
 		"contracts/Comfree.sol": {
-			"keccak256": "0x87ce0573eab31dfb25b0e4419deb9826f867a296f19c0466003ca65da1f85406",
+			"keccak256": "0xcd79e9158130445b2bdcb53230a74eafc34aca10acc0671776f7186a37f4a2b9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fc7ea98541fadce7e96b1ec76bd06b2666e2d3f35a96200e08ba54068049369a",
-				"dweb:/ipfs/QmP3JDGSdgJLgiQ6bNBwbGxQJnDM8ELRAKJPfGWNaTMkRK"
+				"bzz-raw://054fdc78d06d7a1b45ad9efbc0efe60aa6f657fcf46df226c3310b0b328b778d",
+				"dweb:/ipfs/QmWJqYrw64XkrT25VCXwUiCoW4VUi6feWH5N4efwoRHMtF"
 			]
 		}
 	},
