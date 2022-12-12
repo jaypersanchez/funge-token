@@ -1,0 +1,337 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_offerContractId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_conditionMet",
+						"type": "bool"
+					}
+				],
+				"name": "ConditionListCreate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "ConditionMet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "ConditionNotMet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sellerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "offerAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "OfferCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_conditionList",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "conditionMet",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "WallsPainted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "CarpetCleaned",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "WindowsWashed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_listOfOfferContracts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "buyerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sellerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offerAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "accepted",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "conditionListId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_value",
+						"type": "bool"
+					}
+				],
+				"name": "accept",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "createConditionList",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_buyerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sellerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_offerAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_accepted",
+						"type": "bool"
+					}
+				],
+				"name": "createOfferContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOfferContractDetailsById",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_wallsPainted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_CarpetCleaned",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_WindowsWashed",
+						"type": "bool"
+					}
+				],
+				"name": "manageConditions",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Comfree.sol": "ComfreeProtocol"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Comfree.sol": {
+			"keccak256": "0xda224de66c419efec6ec0ad32e290cb9bc8f1eb9dd9f17eedb2d23f41d3777c5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5b6d66af8786efebc58d547294d10818adb221f8d9a7e5aed712d43d82625777",
+				"dweb:/ipfs/QmUDxB1gKG4smrsYnVe8W54tAUdMdpvdCXC2tawrkSTfbn"
+			]
+		}
+	},
+	"version": 1
+}

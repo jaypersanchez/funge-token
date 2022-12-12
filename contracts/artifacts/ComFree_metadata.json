@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Comfree.sol": "ComFree"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Comfree.sol": {
+			"keccak256": "0x6f85b0968682017a95c2b8dd57a6cebfe072a0d95a36076ac8068c9c424de447",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e4a63be964b3d7c77adc73b667a262838c70ae12aa9ac9e595dbf0294229d25",
+				"dweb:/ipfs/QmTdvLVMKcAZ9CeSi1vBDSZaBPbvE1efesBtMxfAaB8c45"
+			]
+		}
+	},
+	"version": 1
+}
