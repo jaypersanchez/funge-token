@@ -16,9 +16,6 @@ contract ComfreeProtocol {
         uint id; 
         address buyerAddress;
         address sellerAddress;
-        uint offerDate;
-        uint expiredDate;
-        uint currentDate;
         uint offerAmount;
         bool accepted;
         uint conditionListId;
@@ -41,8 +38,10 @@ contract ComfreeProtocol {
     mapping (uint => conditionList) public _conditionList;
     uint conditionListCounter;
     uint offerContractCounter; //this is used as an index that holds each contracts
-    event OfferCreated(uint256 id, address indexed buyerAddress, address indexed sellerAddress, uint offerAmount, uint currentDate, uint expiredDate);
+    event OfferCreated(uint256 id, address indexed buyerAddress, address indexed sellerAddress, uint offerAmount);
     event ConditionListCreate(uint _offerContractId, bool _conditionMet);
+    event ConditionMet(uint _offerId);
+    event ConditionNotMet(uint _offerId);
 
     function manageConditions(uint _offerId, bool _wallsPainted, bool _CarpetCleaned, bool _WindowsWashed) public {
         _conditionList[_offerId].WallsPainted = _wallsPainted;
@@ -52,6 +51,13 @@ contract ComfreeProtocol {
         if( _conditionList[_offerId].WallsPainted == true && _conditionList[_offerId].CarpetCleaned == true && _conditionList[_offerId].WindowsWashed == true) {
             _conditionList[_offerId].conditionMet = true;
         }
+        if(_conditionList[_offerId].conditionMet == true) {
+            emit ConditionMet(_offerId);
+        }
+        else {
+            emit ConditionNotMet(_offerId);
+        }
+        
     }
 
     function createConditionList(uint _offerId) public {
@@ -65,20 +71,15 @@ contract ComfreeProtocol {
     }
         
 
-    function createOfferContract(address _buyerAddress, address _sellerAddress, 
-                                 uint _offerDate, uint _currentDate, uint _expiredDate,
-                                 uint _offerAmount,bool _accepted) public  {
+    function createOfferContract(address _buyerAddress, address _sellerAddress, uint _offerAmount,bool _accepted) public  {
 
         offerContractCounter++;
             _listOfOfferContracts[offerContractCounter].id = offerContractCounter;
             _listOfOfferContracts[offerContractCounter].buyerAddress = _buyerAddress;
             _listOfOfferContracts[offerContractCounter].sellerAddress = _sellerAddress;
-            _listOfOfferContracts[offerContractCounter].offerDate = _offerDate;
-            _listOfOfferContracts[offerContractCounter].expiredDate = _expiredDate;
-            _listOfOfferContracts[offerContractCounter].currentDate = _currentDate;
             _listOfOfferContracts[offerContractCounter].offerAmount = _offerAmount;
             _listOfOfferContracts[offerContractCounter].accepted = _accepted;
-            emit OfferCreated(offerContractCounter, _buyerAddress, _sellerAddress, _offerAmount, _currentDate, _expiredDate);
+            emit OfferCreated(offerContractCounter, _buyerAddress, _sellerAddress, _offerAmount);
 
     }
 

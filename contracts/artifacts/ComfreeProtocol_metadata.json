@@ -35,6 +35,32 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "ConditionMet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "ConditionNotMet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -54,18 +80,6 @@
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "offerAmount",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "currentDate",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "expiredDate",
 						"type": "uint256"
 					}
 				],
@@ -130,21 +144,6 @@
 						"internalType": "address",
 						"name": "sellerAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "offerDate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "expiredDate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "currentDate",
-						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
@@ -213,21 +212,6 @@
 						"internalType": "address",
 						"name": "_sellerAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_offerDate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_currentDate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_expiredDate",
-						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
@@ -341,11 +325,11 @@
 	},
 	"sources": {
 		"contracts/Comfree.sol": {
-			"keccak256": "0xcd79e9158130445b2bdcb53230a74eafc34aca10acc0671776f7186a37f4a2b9",
+			"keccak256": "0xda224de66c419efec6ec0ad32e290cb9bc8f1eb9dd9f17eedb2d23f41d3777c5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://054fdc78d06d7a1b45ad9efbc0efe60aa6f657fcf46df226c3310b0b328b778d",
-				"dweb:/ipfs/QmWJqYrw64XkrT25VCXwUiCoW4VUi6feWH5N4efwoRHMtF"
+				"bzz-raw://5b6d66af8786efebc58d547294d10818adb221f8d9a7e5aed712d43d82625777",
+				"dweb:/ipfs/QmUDxB1gKG4smrsYnVe8W54tAUdMdpvdCXC2tawrkSTfbn"
 			]
 		}
 	},
