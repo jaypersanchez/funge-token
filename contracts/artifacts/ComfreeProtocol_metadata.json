@@ -67,19 +67,19 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "buyerAddress",
+						"name": "sellerAddress",
 						"type": "address"
 					},
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "sellerAddress",
+						"name": "buyerAddress",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "offerAmount",
+						"name": "priceAmount",
 						"type": "uint256"
 					}
 				],
@@ -115,6 +115,50 @@
 						"internalType": "bool",
 						"name": "WindowsWashed",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_homesForSale",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "imgurl",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyaddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ethprice",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -191,6 +235,39 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_buyerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sellerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "imgurl",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyaddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ethprice",
+						"type": "uint256"
+					}
+				],
+				"name": "addPropertyForSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_offerId",
 						"type": "uint256"
@@ -227,6 +304,19 @@
 				"name": "createOfferContract",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getHomesForSale",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -325,11 +415,11 @@
 	},
 	"sources": {
 		"contracts/Comfree.sol": {
-			"keccak256": "0xda224de66c419efec6ec0ad32e290cb9bc8f1eb9dd9f17eedb2d23f41d3777c5",
+			"keccak256": "0xaf60b4e2394a3d408f9444e2da09c4766e7c9d2a3249a345a60b13c98fa8b92d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5b6d66af8786efebc58d547294d10818adb221f8d9a7e5aed712d43d82625777",
-				"dweb:/ipfs/QmUDxB1gKG4smrsYnVe8W54tAUdMdpvdCXC2tawrkSTfbn"
+				"bzz-raw://8674d260d44e21c17e55a969625ddbdaa3795ac51acb04e0d309fb0b4b76e8da",
+				"dweb:/ipfs/QmW2JGt1GXRys5WCfgKiLSSxRfn3JW3wF1oSNeNhALkftz"
 			]
 		}
 	},

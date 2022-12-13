@@ -12,6 +12,15 @@ contract ComfreeProtocol {
         symbol = "Comfree";
     }
 
+    struct homeForSale {
+        uint id;
+        address seller;
+        address buyer;
+        string imgurl;
+        string propertyaddress;
+        uint ethprice;
+    }
+
     struct offerContract {
         uint id; 
         address buyerAddress;
@@ -34,14 +43,45 @@ contract ComfreeProtocol {
         bool WindowsWashed;
     }
 
+    mapping (uint => homeForSale) public _homesForSale;
     mapping (uint => offerContract) public _listOfOfferContracts;
     mapping (uint => conditionList) public _conditionList;
+    
+    uint homesForSaleCounter;
     uint conditionListCounter;
     uint offerContractCounter; //this is used as an index that holds each contracts
-    event OfferCreated(uint256 id, address indexed buyerAddress, address indexed sellerAddress, uint offerAmount);
+    event OfferCreated(uint256 id, address indexed sellerAddress, address indexed buyerAddress, uint priceAmount);
     event ConditionListCreate(uint _offerContractId, bool _conditionMet);
     event ConditionMet(uint _offerId);
     event ConditionNotMet(uint _offerId);
+
+    function addPropertyForSale(address _buyerAddress, address _sellerAddress, string memory imgurl, string memory propertyaddress, uint _ethprice) public  {
+
+        homesForSaleCounter++;
+            _homesForSale[homesForSaleCounter].id = homesForSaleCounter;
+            _homesForSale[homesForSaleCounter].seller = _sellerAddress;
+            _homesForSale[homesForSaleCounter].buyer = _buyerAddress;
+            _homesForSale[homesForSaleCounter].imgurl = imgurl;
+            _homesForSale[homesForSaleCounter].propertyaddress = propertyaddress;
+            _homesForSale[homesForSaleCounter].ethprice = _ethprice;
+    }
+
+    function getHomesForSale() public view returns(uint[] memory) {
+        uint[] memory Ids = new uint[](homesForSaleCounter);
+
+        uint numberOfPropertiesForSale = 0;
+        //iterate
+        for(uint i = 1; i <= offerContractCounter; i++) {
+                Ids[numberOfPropertiesForSale] =  _homesForSale[i].id;
+                numberOfPropertiesForSale++;
+        }
+
+        uint[] memory forSale = new uint[](numberOfPropertiesForSale);
+        for(uint j = 0; j < numberOfPropertiesForSale; j++) {
+            forSale[j] = Ids[j];
+        }
+        return forSale;
+    }
 
     function manageConditions(uint _offerId, bool _wallsPainted, bool _CarpetCleaned, bool _WindowsWashed) public {
         _conditionList[_offerId].WallsPainted = _wallsPainted;
