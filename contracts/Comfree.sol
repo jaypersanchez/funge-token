@@ -48,6 +48,7 @@ contract ComfreeProtocol {
     mapping (uint => conditionList) public _conditionList;
     
     uint homesForSaleCounter;
+    uint listingCounter;
     uint conditionListCounter;
     uint offerContractCounter; //this is used as an index that holds each contracts
     event OfferCreated(uint256 id, address indexed sellerAddress, address indexed buyerAddress, uint priceAmount);
@@ -57,27 +58,27 @@ contract ComfreeProtocol {
 
     function addPropertyForSale(address _buyerAddress, address _sellerAddress, string memory imgurl, string memory propertyaddress, uint _ethprice) public  {
 
-        homesForSaleCounter++;
-            _homesForSale[homesForSaleCounter].id = homesForSaleCounter;
-            _homesForSale[homesForSaleCounter].seller = _sellerAddress;
-            _homesForSale[homesForSaleCounter].buyer = _buyerAddress;
-            _homesForSale[homesForSaleCounter].imgurl = imgurl;
-            _homesForSale[homesForSaleCounter].propertyaddress = propertyaddress;
-            _homesForSale[homesForSaleCounter].ethprice = _ethprice;
+        listingCounter++;
+            _homesForSale[listingCounter].id = listingCounter;
+            _homesForSale[listingCounter].seller = _sellerAddress;
+            _homesForSale[listingCounter].buyer = _buyerAddress;
+            _homesForSale[listingCounter].imgurl = imgurl;
+            _homesForSale[listingCounter].propertyaddress = propertyaddress;
+            _homesForSale[listingCounter].ethprice = _ethprice;
     }
 
     function getHomesForSale() public view returns(uint[] memory) {
-        uint[] memory Ids = new uint[](homesForSaleCounter);
+        uint[] memory Ids = new uint[](listingCounter);
 
-        uint numberOfPropertiesForSale = 0;
+        uint numberOflistingCounter = 0;
         //iterate
-        for(uint i = 1; i <= offerContractCounter; i++) {
-                Ids[numberOfPropertiesForSale] =  _homesForSale[i].id;
-                numberOfPropertiesForSale++;
+        for(uint i = 1; i <= listingCounter; i++) {
+                Ids[numberOflistingCounter] =  _homesForSale[i].id;
+                numberOflistingCounter++;
         }
 
-        uint[] memory forSale = new uint[](numberOfPropertiesForSale);
-        for(uint j = 0; j < numberOfPropertiesForSale; j++) {
+        uint[] memory forSale = new uint[](numberOflistingCounter);
+        for(uint j = 0; j < numberOflistingCounter; j++) {
             forSale[j] = Ids[j];
         }
         return forSale;

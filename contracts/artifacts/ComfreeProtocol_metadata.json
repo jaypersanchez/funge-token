@@ -415,11 +415,11 @@
 	},
 	"sources": {
 		"contracts/Comfree.sol": {
-			"keccak256": "0xaf60b4e2394a3d408f9444e2da09c4766e7c9d2a3249a345a60b13c98fa8b92d",
+			"keccak256": "0x4e923a4f0c3efcfe0f255176eacfacf9a3fbb9bffa751e2d70a670a9ee1dad4b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8674d260d44e21c17e55a969625ddbdaa3795ac51acb04e0d309fb0b4b76e8da",
-				"dweb:/ipfs/QmW2JGt1GXRys5WCfgKiLSSxRfn3JW3wF1oSNeNhALkftz"
+				"bzz-raw://f4e37f95bc1039b136e1d80cfde5195a3522a9bb05221a0ce283d9396fe18bdb",
+				"dweb:/ipfs/QmaJtBi7JVikDYJRXg4eziDRqdqVdthscP46Qe2VZMBYYQ"
 			]
 		}
 	},
