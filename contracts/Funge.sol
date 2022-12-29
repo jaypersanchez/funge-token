@@ -12,7 +12,7 @@ contract Funge {
     string public constant symbol = "FNG";
     uint8 public constant decimals = 18;
 	address public minter;
-	uint256 totalSupply_
+	uint256 totalSupply_;
 	mapping (address => uint) public balances;
 
 	event Sent(address from, address to, uint amount);

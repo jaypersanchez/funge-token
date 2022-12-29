@@ -1,0 +1,203 @@
+{
+	"compiler": {
+		"version": "0.4.18+commit.9cf6e910"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "buyArticle",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getArticlesForSale",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getNumberOfArticles",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "sellArticle",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "articles",
+				"outputs": [
+					{
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "LogSellArticle",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "_price",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "msgvalue",
+						"type": "uint256"
+					}
+				],
+				"name": "LogBuyArticle",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/B2BArticles.sol": "B2BArticles"
+		},
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/B2BArticles.sol": {
+			"keccak256": "0x6f94400ebf6a2ae32742b8b1a0f5de3d6f2388d85991498c7d25eaa1b216edde",
+			"urls": [
+				"bzzr://6df80a5b6e23269fa675ed00796b21515f6e568ccd0fa0c8782ed0175b1fa3a4"
+			]
+		}
+	},
+	"version": 1
+}
