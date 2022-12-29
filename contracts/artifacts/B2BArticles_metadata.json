@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.26+commit.4563c3fc"
+		"version": "0.4.18+commit.9cf6e910"
 	},
 	"language": "Solidity",
 	"output": {
@@ -162,6 +162,11 @@
 						"indexed": false,
 						"name": "_price",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "msgvalue",
+						"type": "uint256"
 					}
 				],
 				"name": "LogBuyArticle",
@@ -179,7 +184,6 @@
 		"compilationTarget": {
 			"contracts/B2BArticles.sol": "B2BArticles"
 		},
-		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -189,9 +193,9 @@
 	},
 	"sources": {
 		"contracts/B2BArticles.sol": {
-			"keccak256": "0xddde84b261fee603fb3f2d261f833fecb27f60dff6ab8cf10f5bcce4f9c35ee1",
+			"keccak256": "0x6f94400ebf6a2ae32742b8b1a0f5de3d6f2388d85991498c7d25eaa1b216edde",
 			"urls": [
-				"bzzr://ef2dc395d3c1b606638703188c59c5ca5c254214ba86eac2186c5b257af12928"
+				"bzzr://6df80a5b6e23269fa675ed00796b21515f6e568ccd0fa0c8782ed0175b1fa3a4"
 			]
 		}
 	},
