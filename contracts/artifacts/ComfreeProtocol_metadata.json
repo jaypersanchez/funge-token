@@ -61,6 +61,31 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
+						"name": "propertyid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					}
+				],
+				"name": "OfferAccepted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
 					},
@@ -159,6 +184,11 @@
 						"internalType": "uint256",
 						"name": "ethprice",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inescrow",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -180,6 +210,11 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "uint256",
+						"name": "propertyid",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "buyerAddress",
 						"type": "address"
@@ -188,6 +223,11 @@
 						"internalType": "address",
 						"name": "sellerAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "imgurl",
+						"type": "string"
 					},
 					{
 						"internalType": "uint256",
@@ -219,6 +259,11 @@
 						"internalType": "bool",
 						"name": "_value",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_propertyid",
+						"type": "uint256"
 					}
 				],
 				"name": "accept",
@@ -229,7 +274,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -281,6 +326,11 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_proertyid",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "_buyerAddress",
 						"type": "address"
@@ -289,6 +339,11 @@
 						"internalType": "address",
 						"name": "_sellerAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_imgurl",
+						"type": "string"
 					},
 					{
 						"internalType": "uint256",
@@ -415,11 +470,11 @@
 	},
 	"sources": {
 		"contracts/Comfree.sol": {
-			"keccak256": "0x4e923a4f0c3efcfe0f255176eacfacf9a3fbb9bffa751e2d70a670a9ee1dad4b",
+			"keccak256": "0xcdbe6ea32f04089e28fa0ba1d0e26540b758327c8b1ff1bb6b82fafee742432c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f4e37f95bc1039b136e1d80cfde5195a3522a9bb05221a0ce283d9396fe18bdb",
-				"dweb:/ipfs/QmaJtBi7JVikDYJRXg4eziDRqdqVdthscP46Qe2VZMBYYQ"
+				"bzz-raw://f2e8ab5e3924c5ba0116cf4ae83c304648e6ef88149d3e24a7ada082094fd2dd",
+				"dweb:/ipfs/QmSCSC883hz6vq2ZEEXtVSDAb7u3QsnMBcfZY9nynq2wmD"
 			]
 		}
 	},

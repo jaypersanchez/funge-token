@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "total",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -74,6 +80,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -105,6 +124,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -120,6 +152,19 @@
 				"name": "send",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -151,11 +196,11 @@
 	},
 	"sources": {
 		"contracts/Funge.sol": {
-			"keccak256": "0x16a9723ed117d59c134494c6a3906cde676cf5cd9910e507a67afdb1768169f0",
+			"keccak256": "0xafa9406a87b14e46a4333433d3580651f4f1473827f5f84ab7ca72b264370f1e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4396734800e3496486bc6ae04443fd4a51df4298b809fce447f19669dd18a13b",
-				"dweb:/ipfs/QmSwFJuzmLdZEJPGx7wqQed21Ay1qwXh9HViUjtos2k532"
+				"bzz-raw://719d7217f78c64e4f6249743f3a667621e82d815bf4696ab053a7e3b66ea6fd4",
+				"dweb:/ipfs/QmfUqRBEYAhv5T5FuuzUk2UrYYotHPgArypmKHfS95MKwr"
 			]
 		}
 	},

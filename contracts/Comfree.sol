@@ -19,12 +19,15 @@ contract ComfreeProtocol {
         string imgurl;
         string propertyaddress;
         uint ethprice;
+        bool inescrow;
     }
 
     struct offerContract {
         uint id; 
+        uint propertyid;
         address buyerAddress;
         address sellerAddress;
+        string imgurl;
         uint offerAmount;
         bool accepted;
         uint conditionListId;
@@ -55,6 +58,7 @@ contract ComfreeProtocol {
     event ConditionListCreate(uint _offerContractId, bool _conditionMet);
     event ConditionMet(uint _offerId);
     event ConditionNotMet(uint _offerId);
+    event OfferAccepted( uint propertyid, uint256 price, address buyer);
 
     function addPropertyForSale(address _buyerAddress, address _sellerAddress, string memory imgurl, string memory propertyaddress, uint _ethprice) public  {
 
@@ -65,6 +69,7 @@ contract ComfreeProtocol {
             _homesForSale[listingCounter].imgurl = imgurl;
             _homesForSale[listingCounter].propertyaddress = propertyaddress;
             _homesForSale[listingCounter].ethprice = _ethprice;
+            _homesForSale[listingCounter].inescrow = false;
     }
 
     function getHomesForSale() public view returns(uint[] memory) {
@@ -73,8 +78,11 @@ contract ComfreeProtocol {
         uint numberOflistingCounter = 0;
         //iterate
         for(uint i = 1; i <= listingCounter; i++) {
-                Ids[numberOflistingCounter] =  _homesForSale[i].id;
-                numberOflistingCounter++;
+                //if in escrow, don't include in list for sale.
+                if(_homesForSale[i].inescrow == false) {
+                    Ids[numberOflistingCounter] =  _homesForSale[i].id;
+                    numberOflistingCounter++;
+                }
         }
 
         uint[] memory forSale = new uint[](numberOflistingCounter);
@@ -112,27 +120,35 @@ contract ComfreeProtocol {
     }
         
 
-    function createOfferContract(address _buyerAddress, address _sellerAddress, uint _offerAmount,bool _accepted) public  {
-
+    function createOfferContract(uint _proertyid, address _buyerAddress, address _sellerAddress, string memory _imgurl, uint _offerAmount,bool _accepted) public  {
+        require(msg.sender != _sellerAddress);
         offerContractCounter++;
             _listOfOfferContracts[offerContractCounter].id = offerContractCounter;
+            _listOfOfferContracts[offerContractCounter].propertyid = _proertyid;
             _listOfOfferContracts[offerContractCounter].buyerAddress = _buyerAddress;
             _listOfOfferContracts[offerContractCounter].sellerAddress = _sellerAddress;
+            _listOfOfferContracts[offerContractCounter].imgurl = _imgurl;
             _listOfOfferContracts[offerContractCounter].offerAmount = _offerAmount;
             _listOfOfferContracts[offerContractCounter].accepted = _accepted;
             emit OfferCreated(offerContractCounter, _buyerAddress, _sellerAddress, _offerAmount);
 
     }
 
-    function accept(uint _id, bool _value) public returns(bool) {
+    function accept(uint _id, bool _value, uint _propertyid) payable public returns(bool) {
         /*
         * Future update.  Must have mechanism to prevent changing accepted offer
         * back to non-acception.  Depending on law of the land, the current
         * instance of this contract may have to be nulled and a new contract
         * must be opened.
         */
-        require(_listOfOfferContracts[_id].sellerAddress != msg.sender);
+        //require(_listOfOfferContracts[_id].sellerAddress != msg.sender);
+        //must not currently be in escrow
+        //require(_homesForSale[_propertyid].inescrow == false);
         _listOfOfferContracts[_id].accepted = _value;
+        _homesForSale[_propertyid].inescrow = true;
+        //transfer
+        payable(_listOfOfferContracts[_id].sellerAddress).transfer(msg.value);
+        emit OfferAccepted(_propertyid, msg.value, msg.sender);
         return _value; //this will either return true or false
     }
 
