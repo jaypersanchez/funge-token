@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.13+commit.abaa5c0e"
+		"version": "0.8.17+commit.8df45f5f"
 	},
 	"language": "Solidity",
 	"output": {
@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FungeToken.sol": "SafeMath"
+			"contracts/Qbii.sol": "SafeMath"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -33,12 +33,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/FungeToken.sol": {
-			"keccak256": "0x0923a9eaf16e120c0e9b249ee389d18df3ef05aa9434ff374530459059060659",
+		"contracts/Qbii.sol": {
+			"keccak256": "0xaba1f8d49645db85ad7a604c85c72553a51007bd6f3d954e5823c5cb6558d706",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://aa5cbc69013d0b0a3cc46aaf8f065a6df6b84adc4c24475ed383b034e627a8dc",
-				"dweb:/ipfs/QmavuRUozRq6nkNzmQGcKkngHTcCLCw4LoX2U8c3z9umxc"
+				"bzz-raw://91c2fc922935f721544093bf9bf55392dc1b6f76c76bd9e8106e0874a5b5eb46",
+				"dweb:/ipfs/QmPRav2GqhLC2FXXntJEEtqWTj7Jk77xSPGqaiBqtYh1of"
 			]
 		}
 	},
