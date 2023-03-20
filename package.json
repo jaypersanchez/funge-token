@@ -9,11 +9,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "J. Sanchez",
   "license": "ISC",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
     "@remix-project/remixd": "^0.6.8",
     "dotenv": "^16.0.3",
     "g": "^2.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaypersanchez/funge-token.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaypersanchez/funge-token/issues"
+  },
+  "homepage": "https://github.com/jaypersanchez/funge-token#readme"
 }
