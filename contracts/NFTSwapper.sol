@@ -6,6 +6,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
+/*
+* Owned:
+* 0xd31ABCf1d67dc1FB764aF1B2639115cff0fE1f95
+*/
+
 contract NFTSwapper is Context, Ownable
 { 
     using Counters for Counters.Counter;  
