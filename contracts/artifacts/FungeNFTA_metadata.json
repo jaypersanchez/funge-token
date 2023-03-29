@@ -491,7 +491,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FungeNFTB.sol": "FungeNFTA"
+			"contracts/FungeNFTA.sol": "FungeNFTA"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -577,7 +577,7 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"contracts/FungeNFTB.sol": {
+		"contracts/FungeNFTA.sol": {
 			"keccak256": "0xfbf24e59ff0cda80240657926f96ae1232532426f700f5a18b2b7f9e66c419c7",
 			"license": "MIT",
 			"urls": [

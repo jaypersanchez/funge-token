@@ -8,6 +8,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 * 0xCe8771D0b27a3e9aA7FEC79A8b7fdC95927ac567 
 * Owned:0xeBd44c4Bb5d3334990D3398747631c7d6C36a53D
 * Test Account: 0xd31ABCf1d67dc1FB764aF1B2639115cff0fE1f95
+*
+* Mumbai Deployed: 0x3F64cD9eC941230097F7D3757D99C64B9f8e3864
+* Owned: 0xfC2dBF75C1C1F078eBCAF7d279Eb87Fc7771681a
 * 
 */
 

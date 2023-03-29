@@ -9,6 +9,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 * Owned:0xd31ABCf1d67dc1FB764aF1B2639115cff0fE1f95
 * Test Account: 0xeBd44c4Bb5d3334990D3398747631c7d6C36a53D
 * 
+* Mumbai Deployed: 0x238b8a1B9E8Bd079A54ece2b76D91f6E20100b62
+* Owned: 0x1eeaa3A034725fd932EeD8165A20b5F43AE631a1
 */
 
 contract FungeNFTB is ERC1155, Ownable {

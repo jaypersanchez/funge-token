@@ -578,11 +578,11 @@
 			]
 		},
 		"contracts/FungeNFTB.sol": {
-			"keccak256": "0x4d30c084c1be54822b6460296e57f5c0267de9e7385d99c1b0a9c5ac5d4363bb",
+			"keccak256": "0x887128fd96ad256a47146b7074eb1fbd3098fd8e8492dce69aac211723073f5b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5e0528bcdaeae8539b38fbfd19bf4d153ffcf25d818ab43b64c3ca9c318ed667",
-				"dweb:/ipfs/QmVnQh79Khf5asM8P2fF8ESyyEkUX8jr5PLf4MkRTUbmCW"
+				"bzz-raw://64de790b96e0b39c8dad6b08cb02e8bb24316420dee48737f3daa65ea12d8565",
+				"dweb:/ipfs/QmW2LaPADd9YtFzpKNrMp8C8AFq1LvQUkLadHZMvbiy3HD"
 			]
 		}
 	},
