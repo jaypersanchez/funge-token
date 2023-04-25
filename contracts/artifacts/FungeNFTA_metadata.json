@@ -578,11 +578,11 @@
 			]
 		},
 		"contracts/FungeNFTA.sol": {
-			"keccak256": "0xfbf24e59ff0cda80240657926f96ae1232532426f700f5a18b2b7f9e66c419c7",
+			"keccak256": "0x51b196261cc2a75d3623f7332f5456d9e54f3093887b37ce8781fe2997379f2a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4de309233ab30c91934faaef0cccfdef12fec4ef500c249946136ce31af81c47",
-				"dweb:/ipfs/QmTGmwVHJXj3sZaU8CAjeqsPgLzWqg678iozcHuN7yx9ms"
+				"bzz-raw://52e07f2129273b2339530d176cc5aa223d55e72cedd660dee73ead583a11b2fb",
+				"dweb:/ipfs/QmPPuyyMBrzasV73Fej1T2WNoyV8uwjKg83ATfZS3BDMMd"
 			]
 		}
 	},
